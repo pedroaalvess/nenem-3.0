@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atendente Virtual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      width: 100%;
+      background-color: #0042DA;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .chatbox {
+      background-color: white;
+      width: 90%;
+      max-width: 420px;
+      height: 70vh;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      position: relative;
+      margin: 20px 0 20px;
+    }
+
+    .footer-links {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #0042DA;
+      text-decoration: underline;
+      margin: 0 10px;
+      font-weight: normal;
+    }
+
+    .mensagem-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: deslizar 0.5s forwards;
+    }
+
+    .mensagem-container.bot::before {
+      content: '';
+      display: inline-block;
+      background-image: url('https://i.imgur.com/SQ0PoBo.png');
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .mensagem {
+      background-color: #e0e0e0;
+      padding: 16px 22px;
+      border-radius: 8px;
+      max-width: 100%;
+      font-size: 18px;
+    }
+
+    .mensagem.usuario {
+      align-self: flex-end;
+      background-color: #d0e0ff;
+    }
+
+    .mensagem-container.usuario {
+      justify-content: flex-end;
+    }
+
+    @keyframes deslizar {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .digitando .mensagem::after {
+      content: ' digitando...';
+      font-style: italic;
+      color: gray;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    #inputNome {
+      display: none;
+      margin-top: 10px;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: deslizar 0.5s forwards;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #nomeInput {
+      width: 65%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+      outline: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    #nomeInput:focus {
+      border-color: #0042DA;
+      box-shadow: 0 0 0 3px rgba(0,66,218,0.1);
+    }
+
+    #btnEnviar {
+      padding: 14px 20px;
+      font-size: 16px;
+      background-color: #0042DA;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #btnEnviar:hover {
+      background-color: #003bbf;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">Seja bem-vindo(a)</div>
+  <div class="chatbox" id="chatBox">
+    <div id="digitando1" class="mensagem-container bot digitando"><div class="mensagem"></div></div>
+    <div id="mensagem1" class="mensagem-container bot" style="display: none;"><div class="mensagem">Olá! Seja bem-vindo(a) à nossa plataforma de orientações sobre processos de inscrição pública.
+    </div></div>
+    <div id="digitando2" class="mensagem-container bot digitando" style="display: none;"><div class="mensagem"></div></div>
+    <div id="mensagem2" class="mensagem-container bot" style="display: none;"><div class="mensagem">Para continuar, me informe o seu nome:</div></div>
+    <div id="inputNome">
+      <input type="text" id="nomeInput" placeholder="Digite seu nome..." onkeydown="verificarEnter(event)">
+      <button id="btnEnviar" onclick="enviarNome()">Enviar</button>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Política de Privacidade</a> |
+    <a href="#">Termos de Uso</a> |
+    <a href="#">Segurança dos Dados</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("digitando1").style.display = "none";
+      document.getElementById("mensagem1").style.display = "flex";
+      document.getElementById("digitando2").style.display = "flex";
+    }, 2000);
+
+    setTimeout(() => {
+      document.getElementById("digitando2").style.display = "none";
+      document.getElementById("mensagem2").style.display = "flex";
+    }, 4000);
+
+    setTimeout(() => {
+      const inputNome = document.getElementById("inputNome");
+      inputNome.style.display = "flex";
+      inputNome.style.opacity = "1";
+    }, 5000);
+
+    function verificarEnter(event) {
+      if (event.key === "Enter") {
+        enviarNome();
+      }
+    }
+
+    function enviarNome() {
+      const nome = document.getElementById("nomeInput").value.trim();
+      if (nome !== "") {
+        const chatBox = document.getElementById("chatBox");
+        const userMsg = document.createElement("div");
+        userMsg.className = "mensagem-container usuario";
+        userMsg.innerHTML = `<div class='mensagem usuario'>${nome}</div>`;
+        chatBox.insertBefore(userMsg, document.getElementById("inputNome"));
+
+        document.getElementById("inputNome").style.display = "none";
+
+        const digitandoFinal = document.createElement("div");
+        digitandoFinal.className = "mensagem-container bot digitando";
+        digitandoFinal.innerHTML = '<div class="mensagem"></div>';
+        chatBox.appendChild(digitandoFinal);
+
+        setTimeout(() => {
+          digitandoFinal.remove();
+          const botMsg = document.createElement("div");
+          botMsg.className = "mensagem-container bot";
+          botMsg.innerHTML = `<div class='mensagem'>Perfeito ${nome}, agora irei te direcionar para o site onde você irá fazer sua inscrição.</div>`;
+          chatBox.appendChild(botMsg);
+
+          setTimeout(() => {
+            const botaoContainer = document.createElement("div");
+            botaoContainer.className = "mensagem-container usuario";
+            const botaoWrapper = document.createElement("div");
+            botaoWrapper.className = "mensagem usuario";
+
+            const botaoRedirect = document.createElement("button");
+            botaoRedirect.textContent = "Realizar inscrição agora";
+            botaoRedirect.style.padding = "14px 20px";
+            botaoRedirect.style.fontSize = "16px";
+            botaoRedirect.style.backgroundColor = "#0042DA";
+            botaoRedirect.style.color = "white";
+            botaoRedirect.style.border = "none";
+            botaoRedirect.style.borderRadius = "30px";
+            botaoRedirect.style.cursor = "pointer";
+            botaoRedirect.style.outline = "none";
+            botaoRedirect.style.boxShadow = "none";
+            botaoRedirect.onfocus = function() { this.blur(); };
+
+            botaoRedirect.onclick = function() {
+              const userMsg = document.createElement("div");
+              userMsg.className = "mensagem-container usuario";
+              userMsg.innerHTML = `<div class='mensagem usuario'>Realizar inscrição agora</div>`;
+              chatBox.appendChild(userMsg);
+              botaoContainer.remove();
+              setTimeout(() => {
+                window.location.href = "../index.html";
+              }, 3000);
+            };
+
+            botaoWrapper.appendChild(botaoRedirect);
+            botaoContainer.appendChild(botaoWrapper);
+            chatBox.appendChild(botaoContainer);
+          }, 1000);
+        }, 1500);
+      }
+    }
+  </script>
+</body>
+</html>
+</div>
+</div>
+<div style="font-size: 12px; color: #666; text-align: center; margin-top: 10px;">
+  Esta é uma plataforma independente, com caráter informativo e educativo.  
+  Não possui vínculo com órgãos públicos.
+</div>
+
