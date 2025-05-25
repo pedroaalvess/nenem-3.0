@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>INEP - Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="INEP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#222">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#222">
+    <meta name="msapplication-navbutton-color" content="#222">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/all.min.css" rel="stylesheet">
+    <link href="./css/fonts.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="loading">
+        <span>Carregando...</span>
+    </div>
+    <div id="barra-brasil">
+        <div class="conteudo-escondido">
+            <a accesskey="1"
+                href="#conteudo">Ir
+                para o conteúdo</a>
+        </div>
+        <div class="conteudo-barra-brasil">
+            <a href="#"
+                class="pic-gov" title="GovBR">GovBR</a>
+            <nav id="menu-barra-brasil" onscroll="checkScrollBarra(this);">
+                <ul class="lista-barra-brasil d-none d-lg-flex d-xl-flex">
+                    <li class="list-item"><a
+                            href="javascript:toggleOrgaosGoverno();"
+                            class="link-barra link-externo-barra">Acesso à informação</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a
+                            href="javascript:toggleOrgaosGoverno();"
+                            class="link-barra link-externo-barra">Participe</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a
+                            href="javascript:toggleOrgaosGoverno();"
+                            class="link-barra link-externo-barra">Serviços</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a
+                            href="javascript:toggleOrgaosGoverno();"
+                            class="link-barra link-externo-barra">Legislação</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a
+                            href="javascript:toggleOrgaosGoverno();"
+                            id="link-orgaos" class="link-barra link-interno-barra link-baixo-barra">Órgãos do
+                            Governo</a></li>
+                </ul>
+                <div class="menu-mobile d-flex d-lg-none d-xl-none"><i class="fa-solid fa-bars"></i></div>
+            </nav>
+            <a href="javascript:scrollBarra();"
+                id="botao-seta-direita" class="botao-seta-direita"><i class="arrow right">Navegar para direita</i></a>
+        </div>
+    </div>
+    <div class="topo-site">
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo_enem.svg" alt="ENEM 2025" width="205">
+            </div>
+        </div>
+        <div class="css-6nj1yj btn-sair d-flex d-lg-none d-xl-none">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z">
+                </path>
+            </svg>
+        </div>
+    </div>
+    <style>
+        .radios .radio label span i {
+            margin-left: 0;
+        }
+    </style>
+    <section id="card-inscricao">
+        <div class="content-card">
+            <div class="barra-side">
+                <div class="content-side css-15jw0c5">
+                    <div class="css-vzoa3y">
+                        <div class="item-menu css-6nj1yj">
+                            <div size="20" class="css-ft3fs5">
+                                <div></div>
+                            </div>
+                            <div class="css-1ckwuji">
+                                <span>Início</span>
+                            </div>
+                        </div>
+                        <div class="item-menu css-6nj1yj">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H48V80h480v352zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2zM360 320h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8z">
+                                </path>
+                            </svg>
+                            <div class="css-1ckwuji">
+                                <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                        </path>
+                                    </svg></div>
+                                <span>Dados Pessoais</span>
+                            </div>
+                        </div>
+                        <div class="item-menu css-6nj1yj">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+                                </path>
+                            </svg>
+                            <div class="css-1ckwuji">
+                                <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                        </path>
+                                    </svg></div>
+                                <span>Endereço</span>
+                            </div>
+                        </div>
+                        <div class="item-menu css-6nj1yj">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0"
+                                viewBox="0 0 448 512">
+                                <path
+                                    d="M320 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM204.5 121.3c-5.4-2.5-11.7-1.9-16.4 1.7l-40.9 30.7c-14.1 10.6-34.2 7.7-44.8-6.4s-7.7-34.2 6.4-44.8l40.9-30.7c23.7-17.8 55.3-21 82.1-8.4l90.4 42.5c29.1 13.7 36.8 51.6 15.2 75.5L299.1 224l97.4 0c30.3 0 53 27.7 47.1 57.4L415.4 422.3c-3.5 17.3-20.3 28.6-37.7 25.1s-28.6-20.3-25.1-37.7L377 288l-70.3 0c8.6 19.6 13.3 41.2 13.3 64c0 88.4-71.6 160-160 160S0 440.4 0 352s71.6-160 160-160c11.1 0 22 1.1 32.4 3.3l54.2-54.2-42.1-19.8zM160 448a96 96 0 1 0 0-192 96 96 0 1 0 0 192z">
+                                </path>
+                            </svg>
+                            <div class="css-1ckwuji">
+                                <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                        </path>
+                                    </svg></div>
+                                <span>Atendimentos</span>
+                            </div>
+                        </div>
+                        <div class="item-menu css-6nj1yj">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0"
+                                viewBox="0 0 640 512">
+                                <path
+                                    d="M0 128C0 92.7 28.7 64 64 64l192 0 48 0 16 0 256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64l-256 0-16 0-48 0L64 448c-35.3 0-64-28.7-64-64L0 128zm320 0l0 256 256 0 0-256-256 0zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1 73.6 0 8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276l-38 0 19-42.8zM448 164c11 0 20 9 20 20l0 4 44 0 16 0c11 0 20 9 20 20s-9 20-20 20l-2 0-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45L448 228l-72 0c-11 0-20-9-20-20s9-20 20-20l52 0 0-4c0-11 9-20 20-20z">
+                                </path>
+                            </svg>
+                            <div class="css-1ckwuji">
+                                <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                        </path>
+                                    </svg></div>
+                                <span>Língua Estrangeira</span>
+                            </div>
+                        </div>
+                        <div class="item-menu css-1t95esl btn-voltar-ativo">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0"
+                                viewBox="0 0 640 512">
+                                <path
+                                    d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z">
+                                </path>
+                            </svg>
+                            <div class="css-1ckwuji">
+                                <div class="css-8c6prb"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 576 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">
+                                        </path>
+                                    </svg></div>
+                                <span>Ensino Médio</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="css-6nj1yj btn-sair">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z">
+                            </path>
+                        </svg>
+                        <div class="css-1ckwuji">
+                            <span>Sair</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-card">
+                <div class="css-2d3tz0">
+                    <div class="css-dnz5hk">
+                        <div class="css-12jrde7">
+                            <form class="step-1 form-ativo slide-in-right" autocomplete="off"
+                                >
+                                <div class="css-yq7480">
+                                    <div class="css-1ww02rk">
+                                        <div class="css-d4bxoq">
+                                            <div class="css-4fyxpi">
+                                                <div size="70" class="css-y0fpqq avatar-normal">
+                                                    <div></div>
+                                                </div>
+                                                <div direction="left" tabindex="0" class="css-3o2vej">
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 320 512" height="1em" width="1em"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="">
+                                                        <div>
+                                                            <p><b class="primeiroNome"></b>, qual a atual situação
+                                                                do seu ensino médio entre as alternativas abaixo?</p>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="inputs w-100" style="max-width:720px;">
+                                                <div class="radios-list">
+                                                    <div class="radio">
+                                                        <input type="radio" name="situacao" id="s1"
+                                                            value="Já concluí o ensino médio." required=""
+                                                            class="d-none">
+                                                        <label for="s1"><span><i></i></span>
+                                                            <div>Já concluí o ensino médio.</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="situacao" id="s2"
+                                                            value="Estou cursando a última série/ano do ensino médio."
+                                                            required="" class="d-none">
+                                                        <label for="s2"><span><i></i></span>
+                                                            <div>Estou cursando a última série/ano do ensino médio.
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="situacao" id="s3"
+                                                            value="Estou cursando o ensino médio, mas não estou na última série/ano."
+                                                            required="" class="d-none">
+                                                        <label for="s3"><span><i></i></span>
+                                                            <div>Estou cursando o ensino médio, mas não estou na última
+                                                                série/ano.</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="situacao" id="s4"
+                                                            value="Não estou cursando e não concluí o ensino médio."
+                                                            required="" class="d-none">
+                                                        <label for="s4"><span><i></i></span>
+                                                            <div>Não estou cursando e não concluí o ensino médio.</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="css-3b5k8a">
+                                    <div class="css-5aalu8">
+                                        <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-step"
+                                            tabindex="0" type="button">
+                                            <span class="jss503">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                    viewBox="0 0 24 24" height="1em" width="1em"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z">
+                                                    </path>
+                                                </svg>Voltar
+                                            </span>
+                                            <span class="jss891"></span>
+                                        </button>
+                                    </div>
+                                    <div class="css-5aalu8">
+                                        <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0"
+                                            type="submit">
+                                            <span class="jss503">
+                                                <div class="css-11fs7lx">
+                                                    <span>
+                                                        <span>Próximo</span>
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                            viewBox="0 0 24 24" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                            <span class="jss884"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="step-2 d-none" autocomplete="off">
+                                <div class="css-yq7480">
+                                    <div class="css-1ww02rk">
+                                        <div class="css-d4bxoq">
+                                            <div class="css-4fyxpi">
+                                                <div size="70" class="css-y0fpqq avatar-normal">
+                                                    <div></div>
+                                                </div>
+                                                <div direction="left" tabindex="0" class="css-3o2vej">
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 320 512" height="1em" width="1em"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="">
+                                                        <div>
+                                                            <p>Você obteve sua certificação do ensino médio pelo
+                                                                Encceja?</p>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="css-3sh40q">
+                                                <div class="css-1ih1zar">
+                                                    <div size="70" class="css-1meb55q">
+                                                        <div></div>
+                                                    </div>
+                                                    <div direction="left" tabindex="0" class="css-1nalen3">
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                            viewBox="0 0 320 512" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="">
+                                                            <p>O <b>Encceja</b> é um exame destinado a jovens e adultos
+                                                                que não concluíram seus estudos na idade apropriada
+                                                                (ensino fundamental ou ensino médio).</p>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div></div>
+                                            </div>
+                                            <div class="inputs">
+                                                <div class="radios">
+                                                    <div class="radio">
+                                                        <input type="radio" name="encceja" id="sim" value="Sim"
+                                                            required="" class="d-none">
+                                                        <label for="sim">Sim <span><i
+                                                                    class="fa-solid fa-circle-check"></i></span></label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="encceja" id="nao" value="Não"
+                                                            required="" class="d-none">
+                                                        <label for="nao">Não <span><i
+                                                                    class="fa-solid fa-circle-check"></i></span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="css-3b5k8a">
+                                    <div class="css-5aalu8">
+                                        <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-1"
+                                            tabindex="0" type="button">
+                                            <span class="jss503">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                    viewBox="0 0 24 24" height="1em" width="1em"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z">
+                                                    </path>
+                                                </svg>Voltar
+                                            </span>
+                                            <span class="jss891"></span>
+                                        </button>
+                                    </div>
+                                    <div class="css-5aalu8">
+                                        <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0"
+                                            type="submit">
+                                            <span class="jss503">
+                                                <div class="css-11fs7lx">
+                                                    <span>
+                                                        <span>Próximo</span>
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                            viewBox="0 0 24 24" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                            <span class="jss884"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form id="form-sair" class="form-sair d-none"
+                                >
+                                <div class="css-yq7480">
+                                    <div class="css-1ww02rk">
+                                        <div class="css-d4bxoq">
+                                            <div class="css-4fyxpi">
+                                                <div size="70" class="css-y0fpqq avatar-confusa">
+                                                    <div></div>
+                                                </div>
+                                                <div direction="left" tabindex="0" class="css-3o2vej">
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 320 512" height="1em" width="1em"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="">
+                                                        <div>
+                                                            <p><b class="nome"></b>, sua
+                                                                solicitação de inscrição do Enem 2025 ainda não está
+                                                                completa!</p>
+                                                            <p>se você sair agora, perderá todos os dados informados.
+                                                            </p>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="css-4fyxpi">
+                                                <div class="css-1u39n0h"></div>
+                                                <div direction="none" tabindex="0" class="css-1ibqy1r">
+                                                    <span class="">
+                                                        <div>
+                                                            <p>Lembre-se que o período de inscrição do Enem 2025 se
+                                                                encerra no dia <b>18/05/2025</b>!</p>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="css-3b5k8a">
+                                    <div class="css-5aalu8">
+                                        <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-ativo"
+                                            tabindex="0" type="button">
+                                            <span class="jss503">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                    viewBox="0 0 24 24" height="1em" width="1em"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z">
+                                                    </path>
+                                                </svg>Voltar
+                                            </span>
+                                            <span class="jss891"></span>
+                                        </button>
+                                    </div>
+                                    <div class="css-5aalu8">
+                                        <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0"
+                                            type="submit">
+                                            <span class="jss503">
+                                                <div class="css-11fs7lx">
+                                                    <span>
+                                                        <span>Sair</span>
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                            viewBox="0 0 512 512" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                            <span class="jss891"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <div class="css-17m656a d-flex d-lg-none d-xl-none">
+                        <div class="css-15jw0c5">
+                            <div class="css-vzoa3y">
+                                <div class="item-menu css-6nj1yj">
+                                    <div size="20" class="css-ft3fs5">
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="item-menu css-6nj1yj">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 576 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H48V80h480v352zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2zM360 320h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8z">
+                                        </path>
+                                    </svg>
+                                    <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor"
+                                            stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                            </path>
+                                        </svg></div>
+                                </div>
+                                <div class="item-menu css-6nj1yj">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 576 512" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+                                        </path>
+                                    </svg>
+                                    <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor"
+                                            stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                            </path>
+                                        </svg></div>
+                                </div>
+                                <div class="item-menu css-6nj1yj">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 448 512">
+                                        <path
+                                            d="M320 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM204.5 121.3c-5.4-2.5-11.7-1.9-16.4 1.7l-40.9 30.7c-14.1 10.6-34.2 7.7-44.8-6.4s-7.7-34.2 6.4-44.8l40.9-30.7c23.7-17.8 55.3-21 82.1-8.4l90.4 42.5c29.1 13.7 36.8 51.6 15.2 75.5L299.1 224l97.4 0c30.3 0 53 27.7 47.1 57.4L415.4 422.3c-3.5 17.3-20.3 28.6-37.7 25.1s-28.6-20.3-25.1-37.7L377 288l-70.3 0c8.6 19.6 13.3 41.2 13.3 64c0 88.4-71.6 160-160 160S0 440.4 0 352s71.6-160 160-160c11.1 0 22 1.1 32.4 3.3l54.2-54.2-42.1-19.8zM160 448a96 96 0 1 0 0-192 96 96 0 1 0 0 192z">
+                                        </path>
+                                    </svg>
+                                    <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor"
+                                            stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                            </path>
+                                        </svg></div>
+                                </div>
+                                <div class="item-menu css-6nj1yj">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 640 512">
+                                        <path
+                                            d="M0 128C0 92.7 28.7 64 64 64l192 0 48 0 16 0 256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64l-256 0-16 0-48 0L64 448c-35.3 0-64-28.7-64-64L0 128zm320 0l0 256 256 0 0-256-256 0zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1 73.6 0 8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276l-38 0 19-42.8zM448 164c11 0 20 9 20 20l0 4 44 0 16 0c11 0 20 9 20 20s-9 20-20 20l-2 0-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45L448 228l-72 0c-11 0-20-9-20-20s9-20 20-20l52 0 0-4c0-11 9-20 20-20z">
+                                        </path>
+                                    </svg>
+                                    <div class="css-vn3vmt"><svg stroke="currentColor" fill="currentColor"
+                                            stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                            </path>
+                                        </svg></div>
+                                </div>
+                                <div class="item-menu btn-voltar-ativo css-1t95esl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 640 512">
+                                        <path
+                                            d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z">
+                                        </path>
+                                    </svg>
+                                    <div class="css-8c6prb"><svg stroke="currentColor" fill="currentColor"
+                                            stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">
+                                            </path>
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="css-gvoj8n">
+                        <div class="css-16r3k2g">
+                            <h3 class="nome"></h3>
+                            <span class="cpf"></span>
+                        </div>
+                        <div class="css-17l7yx8">
+                            <span>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z">
+                                    </path>
+                                </svg> 3.0.1326
+                            </span>
+                            <span>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z">
+                                    </path>
+                                </svg> 3.0.5351
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/functions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cpfDataString = localStorage.getItem('cpfData');
+            if (!cpfDataString) {
+                window.location.href = './inscricao.html';
+            }
+            const cpfData = JSON.parse(cpfDataString);
+            $('.cpf').text(cpfData.CPF);
+            $('.nome').text(cpfData.NOME);
+            $('.nasc').text(cpfData.DATA_NASCIMENTO);
+            $('.mae').text(cpfData.NOME_MAE);
+            $('.primeiroNome').text(cpfData.PRIMEIRO_NOME);
+
+            $('.btn-sair').on('click', function (e) {
+                e.preventDefault();
+                $('.item-menu.btn-voltar-ativo').removeClass('css-1t95esl').addClass('css-6nj1yj');
+                $('.btn-sair').removeClass('css-6nj1yj').addClass('css-1t95esl');
+
+                $('form.form-ativo').removeClass('slide-in-right').addClass('d-none');
+                $('form.form-sair').removeClass('d-none').addClass('slide-in-right');
+            });
+
+            $('.btn-voltar-ativo').on('click', function (e) {
+                e.preventDefault();
+                $('.item-menu.btn-voltar-ativo').addClass('css-1t95esl').removeClass('css-6nj1yj');
+                $('.btn-sair').addClass('css-6nj1yj').removeClass('css-1t95esl');
+
+                $('form.form-sair').removeClass('slide-in-right').addClass('d-none');
+                $('form.form-ativo').removeClass('d-none').addClass('slide-in-right');
+            });
+
+            $('.btn-voltar-step').on('click', function (e) {
+                e.preventDefault();
+                window.location.href = './idiomas.html';
+            });
+
+            $('#form-sair').on('submit', function (e) {
+                e.preventDefault();
+                localStorage.removeItem('cpfData');
+                window.location.href = './inscricao.html';
+            })
+
+            document.querySelectorAll('.form-input input[required]').forEach(input => {
+                input.addEventListener('blur', function () {
+                    const parent = input.closest('.form-input');
+                    const errorSpan = parent.querySelector('.error');
+
+                    if (!input.value.trim()) {
+                        parent.classList.add('error');
+                        if (errorSpan) errorSpan.style.display = 'block';
+                    } else {
+                        parent.classList.remove('error');
+                        if (errorSpan) errorSpan.style.display = 'none';
+                    }
+                });
+            });
+
+            $('.step-1').on('submit', function (e) {
+                e.preventDefault();
+
+                $('.step-1').removeClass('form-ativo').removeClass('slide-in-right').addClass('d-none');
+                $('.step-2').removeClass('d-none').addClass('form-ativo').addClass('slide-in-right');
+            });
+
+            $('.btn-voltar-1').on('click', function (e) {
+                e.preventDefault();
+
+                $('.step-2').removeClass('form-ativo').removeClass('slide-in-right').addClass('d-none');
+                $('.step-1').removeClass('d-none').addClass('form-ativo').addClass('slide-in-right');
+            });
+
+            $('.step-2').on('submit', function (e) {
+                e.preventDefault();
+
+                window.location.href = './municipiodeprova.html';
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<title>INEP - Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="INEP">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#222">
+<meta name="apple-mobile-web-app-status-bar-style" content="#222">
+<meta name="msapplication-navbutton-color" content="#222">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="icon" href="images/favicon.ico" sizes="192x192">
+<link rel="apple-touch-icon" href="images/favicon.ico">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/all.min.css" rel="stylesheet">
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body><div id="loading">
+    <span>Carregando...</span>
+</div>
+<div id="barra-brasil">
+    <div class="conteudo-escondido">
+        <a accesskey="1" href="#conteudo">Ir para o conteúdo</a>
+    </div>
+    <div class="conteudo-barra-brasil">
+        <a href="#" class="pic-gov" title="GovBR">GovBR</a>
+        <nav id="menu-barra-brasil" onscroll="checkScrollBarra(this);">
+            <ul class="lista-barra-brasil d-none d-lg-flex d-xl-flex">
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Acesso à informação</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Participe</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Serviços</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Legislação</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" id="link-orgaos" class="link-barra link-interno-barra link-baixo-barra">Órgãos do Governo</a></li>
+            </ul>
+            <div class="menu-mobile d-flex d-lg-none d-xl-none"><i class="fa-solid fa-bars"></i></div>
+        </nav> 
+        <a href="javascript:scrollBarra();" id="botao-seta-direita" class="botao-seta-direita"><i class="arrow right">Navegar para direita</i></a>
+    </div>
+</div>
+<div class="topo-site">
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo_enem.svg" alt="ENEM 2025" width="205">
+        </div>
+    </div>
+    <div class="css-6nj1yj btn-sair d-flex d-lg-none d-xl-none">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+    </div>
+</div><section id="card-inscricao">
+    <div class="content-card">
+        <div class="barra-side">
+            <div class="content-side css-15jw0c5">
+                <div class="css-vzoa3y">
+                    <div class="item-menu css-1t95esl btn-voltar-ativo">
+                        <div size="20" class="css-ft3fs5"><div></div></div>
+                        <div class="css-1ckwuji">
+                            <span>Início</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="css-6nj1yj btn-sair">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+                    <div class="css-1ckwuji">
+                        <span>Sair</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-card">
+            <div class="css-2d3tz0">
+                <div class="css-dnz5hk">
+                    <div class="css-12jrde7">
+                        <form id="form-continuar" class="form-ativo slide-in-right">
+                            <div class="css-yq7480">
+                                <div class="css-1ww02rk">
+                                    <div class="css-d4bxoq">
+                                        <div class="css-4fyxpi">
+                                            <div size="70" class="css-y0fpqq"><div></div></div>
+                                            <div direction="left" tabindex="0" class="css-3o2vej">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                                </svg>
+                                                <span class="">
+                                                    <div>
+                                                        <p>Olá, <b class="nome"></b>!</p>
+                                                        <p>De acordo com o seu cadastro da Receita Federal, você nasceu no dia <b class="nasc"></b> e sua mãe chama-se <b class="mae"></b></p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="css-4fyxpi">
+                                            <div class="css-1u39n0h"></div>
+                                            <div direction="none" tabindex="0" class="css-1ibqy1r">
+                                                <span class="">
+                                                    <div>
+                                                        <p>Caso seus dados pessoais nãoe stajam corretos, prossiga sua inscrição normalmente e entre em contato com a Receita Federal para proceder a atualização necessária.</p>
+                                                        <p>Em caso de dúvidas, entre em contato com a Central de Atendimento pelo telefone 0800-616161.</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="css-4fyxpi">
+                                            <div class="css-1u39n0h"></div>
+                                            <div direction="none" tabindex="0" class="css-1ibqy1r">
+                                                <span class="">
+                                                    <div>
+                                                        <p>A partir de agora vou te chamar apenas de <b class="primeiroNome"></b>!</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-3b5k8a">
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-sair" tabindex="0" type="button">
+                                        <span class="jss503">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>Sair
+                                        </span>
+                                        <span class="jss884"></span>
+                                    </button>
+                                </div>
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0" type="submit">
+                                        <span class="jss503">
+                                            <div class="css-11fs7lx">
+                                                <span>
+                                                    <span>Próximo</span>
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+                                                </span>
+                                            </div>
+                                        </span>
+                                        <span class="jss884"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="form-sair" class="form-sair d-none">
+                            <div class="css-yq7480">
+                                <div class="css-1ww02rk">
+                                    <div class="css-d4bxoq">
+                                        <div class="css-4fyxpi">
+                                            <div size="70" class="css-y0fpqq avatar-confusa"><div></div></div>
+                                            <div direction="left" tabindex="0" class="css-3o2vej">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                                </svg>
+                                                <span class="">
+                                                    <div>
+                                                        <p><b class="nome"></b>, sua solicitação de inscrição do Enem 2025 ainda não está completa!</p>
+                                                        <p>se você sair agora, perderá todos os dados informados.</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="css-4fyxpi">
+                                            <div class="css-1u39n0h"></div>
+                                            <div direction="none" tabindex="0" class="css-1ibqy1r">
+                                                <span class="">
+                                                    <div>
+                                                        <p>Lembre-se que o período de inscrição do Enem 2025 se encerra no dia <b>18/05/2025</b>!</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-3b5k8a">
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-ativo" tabindex="0" type="button">
+                                        <span class="jss503">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>Voltar
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0" type="submit">
+                                        <span class="jss503">
+                                            <div class="css-11fs7lx">
+                                                <span>
+                                                    <span>Sair</span>
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+                                                </span>
+                                            </div>
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="css-17m656a d-flex d-lg-none d-xl-none">
+                    <div class="css-15jw0c5">
+                        <div class="css-vzoa3y">
+                            <div class="item-menu btn-voltar-ativo css-1t95esl">
+                                <div size="20" class="css-ft3fs5"><div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css-gvoj8n">
+                    <div class="css-16r3k2g">
+                        <h3 class="nome"></h3>
+                        <span class="cpf"></span>
+                    </div>
+                    <div class="css-17l7yx8">
+                        <span>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"></path>
+                            </svg> 3.0.1326
+                        </span>
+                        <span>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"></path></svg> 3.0.5351
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cpfDataString = localStorage.getItem('cpfData');
+        if (!cpfDataString) {
+            window.location.href = './inscricao.html';
+        }
+        const cpfData = JSON.parse(cpfDataString);
+        $('.cpf').text(cpfData.CPF);
+        $('.nome').text(cpfData.NOME);
+        $('.nasc').text(cpfData.DATA_NASCIMENTO);
+        $('.mae').text(cpfData.NOME_MAE);
+        $('.primeiroNome').text(cpfData.PRIMEIRO_NOME);
+
+        $('.btn-sair').on('click', function (e) {
+            e.preventDefault();
+            $('.item-menu.btn-voltar-ativo').removeClass('css-1t95esl').addClass('css-6nj1yj');
+            $('.btn-sair').removeClass('css-6nj1yj').addClass('css-1t95esl');
+
+            $('form.form-ativo').removeClass('slide-in-right').addClass('d-none');
+            $('form.form-sair').removeClass('d-none').addClass('slide-in-right');
+        });
+
+        $('.btn-voltar-ativo').on('click', function (e) {
+            e.preventDefault();
+            $('.item-menu.btn-voltar-ativo').addClass('css-1t95esl').removeClass('css-6nj1yj');
+            $('.btn-sair').addClass('css-6nj1yj').removeClass('css-1t95esl');
+            
+            $('form.form-sair').removeClass('slide-in-right').addClass('d-none');
+            $('form.form-ativo').removeClass('d-none').addClass('slide-in-right');
+        });
+
+        $('#form-sair').on('submit', function(e){
+            e.preventDefault();
+            localStorage.removeItem('cpfData');
+            window.location.href = './inscricao.html';
+        });
+
+        $('#form-continuar').on('submit', function(e){
+            e.preventDefault();
+            window.location.href = './pessoal.html';
+        })
+    });
+</script>
+</body></html>

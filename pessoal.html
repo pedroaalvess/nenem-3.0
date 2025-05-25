@@ -1,0 +1,664 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<title>INEP - Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="INEP">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#222">
+<meta name="apple-mobile-web-app-status-bar-style" content="#222">
+<meta name="msapplication-navbutton-color" content="#222">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="icon" href="images/favicon.ico" sizes="192x192">
+<link rel="apple-touch-icon" href="images/favicon.ico">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/all.min.css" rel="stylesheet">
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body><div id="loading">
+    <span>Carregando...</span>
+</div>
+<div id="barra-brasil">
+    <div class="conteudo-escondido">
+        <a accesskey="1" href="#conteudo">Ir para o conteúdo</a>
+    </div>
+    <div class="conteudo-barra-brasil">
+        <a href="#" class="pic-gov" title="GovBR">GovBR</a>
+        <nav id="menu-barra-brasil" onscroll="checkScrollBarra(this);">
+            <ul class="lista-barra-brasil d-none d-lg-flex d-xl-flex">
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Acesso à informação</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Participe</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Serviços</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" class="link-barra link-externo-barra">Legislação</a></li>
+                <li class="espacador"></li>
+                <li class="list-item"><a href="javascript:toggleOrgaosGoverno();" id="link-orgaos" class="link-barra link-interno-barra link-baixo-barra">Órgãos do Governo</a></li>
+            </ul>
+            <div class="menu-mobile d-flex d-lg-none d-xl-none"><i class="fa-solid fa-bars"></i></div>
+        </nav> 
+        <a href="javascript:scrollBarra();" id="botao-seta-direita" class="botao-seta-direita"><i class="arrow right">Navegar para direita</i></a>
+    </div>
+</div>
+<div class="topo-site">
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo_enem.svg" alt="ENEM 2025" width="205">
+        </div>
+    </div>
+    <div class="css-6nj1yj btn-sair d-flex d-lg-none d-xl-none">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+    </div>
+</div><section id="card-inscricao">
+    <div class="content-card">
+        <div class="barra-side">
+            <div class="content-side css-15jw0c5">
+                <div class="css-vzoa3y">
+                    <div class="item-menu css-6nj1yj">
+                        <div size="20" class="css-ft3fs5"><div></div></div>
+                        <div class="css-1ckwuji">
+                            <span>Início</span>
+                        </div>
+                    </div>
+                    <div class="item-menu css-1t95esl btn-voltar-ativo">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H48V80h480v352zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2zM360 320h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8z"></path></svg>
+                        <div class="css-1ckwuji">
+                            <div class="css-8c6prb"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg></div>
+                            <span>Dados Pessoais</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="css-6nj1yj btn-sair">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+                    <div class="css-1ckwuji">
+                        <span>Sair</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-card">
+            <div class="css-2d3tz0">
+                <div class="css-dnz5hk">
+                    <div class="css-12jrde7">
+                    <form class="step-1 form-ativo slide-in-right" autocomplete="off">
+                            <div class="css-yq7480">
+                                <div class="css-1ww02rk">
+                                    <div class="css-d4bxoq">
+                                        <div class="css-4fyxpi">
+                                            <div size="70" class="css-y0fpqq avatar-normal"><div></div></div>
+                                            <div direction="left" tabindex="0" class="css-3o2vej">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                                </svg>
+                                                <span class="">
+                                                    <div>
+                                                        <p>Já sei seu nome, o nome de sua mãe e sua data de nascimento. E o seu pai, qual o nome dele?</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="inputs">
+                                            <div class="form-input">
+                                                <input type="text" id="namePai" name="pai" placeholder="" required="">
+                                                <label for="namePai">Nome Completo do Pai</label>
+                                                <span class="error" id="erro-pai">Campo obrigatório</span>
+                                            </div>
+                                            <div class="form-input">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" name="semPai" id="semPai" value="1" class="d-none">
+                                                    <label for="semPai" class="label-checkbox">Não quero declarar</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-3b5k8a">
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-step" tabindex="0" type="button">
+                                        <span class="jss503">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>Voltar
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0" type="submit">
+                                        <span class="jss503">
+                                            <div class="css-11fs7lx">
+                                                <span>
+                                                    <span>Próximo</span>
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+                                                </span>
+                                            </div>
+                                        </span>
+                                        <span class="jss884"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="step-2 d-none" autocomplete="off">
+                            <div class="css-yq7480">
+                                <div class="css-1ww02rk">
+                                    <div class="css-d4bxoq">
+                                        <div class="css-4fyxpi">
+                                            <div size="70" class="css-y0fpqq avatar-normal"><div></div></div>
+                                            <div direction="left" tabindex="0" class="css-3o2vej">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                                </svg>
+                                                <span class="">
+                                                    <div>
+                                                        <p>Me fale um pouco mais sobre você.</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="inputs w-100 inputs-selects">
+                                            <div class="row">
+                                                <div class="col-12 col-md-2">
+                                                    <div class="form-input">
+                                                        <select name="sexo" id="sexo" required="">
+                                                            <option value="" disabled="" selected="" hidden=""></option>
+                                                            <option value="Masculino">Masculino</option>
+                                                            <option value="Masculino">Feminino</option>
+                                                        </select>
+                                                        <label for="sexo">Sexo*</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <div class="form-input">
+                                                        <select name="raca" id="raca" required="">
+                                                            <option value="" disabled="" selected="" hidden=""></option>
+                                                            <option label="Branca" value="Branca">Branca</option>
+                                                            <option label="Preta" value="Preta">Preta</option>
+                                                            <option label="Amarela" value="Amarela">Amarela</option>
+                                                            <option label="Parda" value="Parda">Parda</option>
+                                                            <option label="Indígena" value="Indígena">Indígena</option>
+                                                            <option label="Não quero declarar" value="Não quero declarar">Não quero declarar</option>
+                                                        </select>
+                                                        <label for="raca">Cor/Raça*</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-input">
+                                                        <select name="estado_civil" id="estado_civil" required="">
+                                                            <option value="" disabled="" selected="" hidden=""></option>
+                                                            <option label="Casado(a)" value="Casado(a)">Casado(a)</option>
+                                                            <option label="Desquitado(a)" value="Desquitado(a)">Desquitado(a)</option>
+                                                            <option label="Divorciado(a)" value="Divorciado(a)">Divorciado(a)</option>
+                                                            <option label="Em união estável" value="Em união estável">Em união estável</option>
+                                                            <option label="Mora com um(a) companheiro(a)" value="Mora com um(a) companheiro(a)">Mora com um(a) companheiro(a)</option>
+                                                            <option label="Solteiro(a)" value="Solteiro(a)">Solteiro(a)</option>
+                                                            <option label="Viúvo(a)" value="Viúvo(a)">Viúvo(a)</option>
+                                                            <option label="Não quero declarar" value="Não quero declarar">Não quero declarar</option>
+                                                        </select>
+                                                        <label for="estado_civil">Estado Civil*</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-input nacionalidade">
+                                                        <select name="nacionalidade" id="nacionalidade" required="">
+                                                            <option value="" disabled="" selected="" hidden=""></option>
+                                                            <option label="Não informado" value="Não informado">Não informado</option>
+                                                            <option label="Brasileiro(a)" value="Brasileiro(a)">Brasileiro(a)</option>
+                                                            <option label="Brasileiro(a) Naturalizado(a)" value="Brasileiro(a) Naturalizado(a)">Brasileiro(a) Naturalizado(a)</option>
+                                                            <option label="Estrangeiro(a)" value="Estrangeiro(a)">Estrangeiro(a)</option>
+                                                            <option label="Brasileiro(a) Nato(a), nascido(a) no exterior" value="Brasileiro(a) Nato(a), nascido(a) no exterior">Brasileiro(a) Nato(a), nascido(a) no exterior</option>
+                                                        </select>
+                                                        <label for="nacionalidade">Nacionalidade*</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-3b5k8a">
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-1" tabindex="0" type="button">
+                                        <span class="jss503">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>Voltar
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0" type="submit">
+                                        <span class="jss503">
+                                            <div class="css-11fs7lx">
+                                                <span>
+                                                    <span>Próximo</span>
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+                                                </span>
+                                            </div>
+                                        </span>
+                                        <span class="jss884"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="step-3 d-none" autocomplete="off">
+                            <div class="css-yq7480">
+                                <div class="css-1ww02rk">
+                                    <div class="css-d4bxoq">
+                                        <div class="css-4fyxpi">
+                                            <div size="70" class="css-y0fpqq avatar-normal"><div></div></div>
+                                            <div direction="left" tabindex="0" class="css-3o2vej">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                                </svg>
+                                                <span class="">
+                                                    <div>
+                                                        <p>Em qual Estado e cidade você nasceu?</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="inputs w-100 inputs-selects">
+                                            <div class="row">
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-input ufNasc">
+                                                        <select name="uf-nascimento" id="uf-nascimento" required="">
+                                                            <option value="" disabled="" selected="" hidden=""></option>
+                                                            <option value="12">Acre</option>
+                                                            <option value="27">Alagoas</option>
+                                                            <option value="13">Amazonas</option>
+                                                            <option value="16">Amapá</option>
+                                                            <option value="29">Bahia</option>
+                                                            <option value="23">Ceará</option>
+                                                            <option value="53">Distrito Federal</option>
+                                                            <option value="32">Espírito Santo</option>
+                                                            <option value="52">Goiás</option>
+                                                            <option value="21">Maranhão</option>
+                                                            <option value="51">Mato Grosso</option>
+                                                            <option value="50">Mato Grosso do Sul</option>
+                                                            <option value="31">Minas Gerais</option>
+                                                            <option value="15">Pará</option>
+                                                            <option value="25">Paraíba</option>
+                                                            <option value="41">Paraná</option>
+                                                            <option value="26">Pernambuco</option>
+                                                            <option value="22">Piauí</option>
+                                                            <option value="33">Rio de Janeiro</option>
+                                                            <option value="24">Rio Grande do Norte</option>
+                                                            <option value="43">Rio Grande do Sul</option>
+                                                            <option value="11">Rondônia</option>
+                                                            <option value="14">Roraima</option>
+                                                            <option value="42">Santa Catarina</option>
+                                                            <option value="35">São Paulo</option>
+                                                            <option value="28">Sergipe</option>
+                                                            <option value="17">Tocantins</option>
+                                                        </select>
+                                                        <label for="uf-nascimento">UF*</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-input cidadeNasc">
+                                                        <select name="cidade-nascimento" id="cidade-nascimento" required="">
+                                                            <option value="" disabled="" selected="" hidden=""></option>
+                                                            
+                                                        </select>
+                                                        <label for="cidade-nascimento">Munícipio*</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-3b5k8a">
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-2" tabindex="0" type="button">
+                                        <span class="jss503">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>Voltar
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0" type="submit">
+                                        <span class="jss503">
+                                            <div class="css-11fs7lx">
+                                                <span>
+                                                    <span>Próximo</span>
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+                                                </span>
+                                            </div>
+                                        </span>
+                                        <span class="jss884"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="form-sair" class="form-sair d-none">
+                            <div class="css-yq7480">
+                                <div class="css-1ww02rk">
+                                    <div class="css-d4bxoq">
+                                        <div class="css-4fyxpi">
+                                            <div size="70" class="css-y0fpqq avatar-confusa"><div></div></div>
+                                            <div direction="left" tabindex="0" class="css-3o2vej">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                                </svg>
+                                                <span class="">
+                                                    <div>
+                                                        <p><b class="nome"></b>, sua solicitação de inscrição do Enem 2025 ainda não está completa!</p>
+                                                        <p>se você sair agora, perderá todos os dados informados.</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="css-4fyxpi">
+                                            <div class="css-1u39n0h"></div>
+                                            <div direction="none" tabindex="0" class="css-1ibqy1r">
+                                                <span class="">
+                                                    <div>
+                                                        <p>Lembre-se que o período de inscrição do Enem 2025 se encerra no dia <b>18/05/2025</b>!</p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-3b5k8a">
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss504 jss506 jss507 jss509 btn-voltar-ativo" tabindex="0" type="button">
+                                        <span class="jss503">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>Voltar
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                                <div class="css-5aalu8">
+                                    <button class="jss454 jss502 jss513 jss514 jss516 jss517" tabindex="0" type="submit">
+                                        <span class="jss503">
+                                            <div class="css-11fs7lx">
+                                                <span>
+                                                    <span>Sair</span>
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+                                                </span>
+                                            </div>
+                                        </span>
+                                        <span class="jss891"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="css-17m656a d-flex d-lg-none d-xl-none">
+                    <div class="css-15jw0c5">
+                        <div class="css-vzoa3y">
+                            <div class="item-menu css-6nj1yj">
+                                <div size="20" class="css-ft3fs5"><div></div></div>
+                            </div>
+                            <div class="item-menu btn-voltar-ativo css-1t95esl">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H48V80h480v352zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2zM360 320h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8z"></path></svg>
+                                <div class="css-8c6prb"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css-gvoj8n">
+                    <div class="css-16r3k2g">
+                        <h3 class="nome"></h3>
+                        <span class="cpf"></span>
+                    </div>
+                    <div class="css-17l7yx8">
+                        <span>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"></path>
+                            </svg> 3.0.1326
+                        </span>
+                        <span>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"></path></svg> 3.0.5351
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cpfDataString = localStorage.getItem('cpfData');
+        if (!cpfDataString) {
+            window.location.href = './inscricao.html';
+        }
+        const cpfData = JSON.parse(cpfDataString);
+        $('.cpf').text(cpfData.CPF);
+        $('.nome').text(cpfData.NOME);
+        $('.nasc').text(cpfData.DATA_NASCIMENTO);
+        $('.mae').text(cpfData.NOME_MAE);
+        $('.primeiroNome').text(cpfData.PRIMEIRO_NOME);
+
+        $('.btn-sair').on('click', function (e) {
+            e.preventDefault();
+            $('.item-menu.btn-voltar-ativo').removeClass('css-1t95esl').addClass('css-6nj1yj');
+            $('.btn-sair').removeClass('css-6nj1yj').addClass('css-1t95esl');
+
+            $('form.form-ativo').removeClass('slide-in-right').addClass('d-none');
+            $('form.form-sair').removeClass('d-none').addClass('slide-in-right');
+        });
+
+        $('.btn-voltar-ativo').on('click', function (e) {
+            e.preventDefault();
+            $('.item-menu.btn-voltar-ativo').addClass('css-1t95esl').removeClass('css-6nj1yj');
+            $('.btn-sair').addClass('css-6nj1yj').removeClass('css-1t95esl');
+            
+            $('form.form-sair').removeClass('slide-in-right').addClass('d-none');
+            $('form.form-ativo').removeClass('d-none').addClass('slide-in-right');
+        });
+
+        $('.btn-voltar-step').on('click', function (e) {
+            e.preventDefault();
+            window.location.href='./inicio.html';
+        });
+
+        $('#form-sair').on('submit', function(e){
+            e.preventDefault();
+            localStorage.removeItem('cpfData');
+            window.location.href = './inscricao.html';
+        })
+
+        document.querySelectorAll('.form-input input[required]').forEach(input => {
+            input.addEventListener('blur', function () {
+                const parent = input.closest('.form-input');
+                const errorSpan = parent.querySelector('.error');
+
+                if (!input.value.trim()) {
+                    parent.classList.add('error');
+                    if (errorSpan) errorSpan.style.display = 'block';
+                } else {
+                    parent.classList.remove('error');
+                    if (errorSpan) errorSpan.style.display = 'none';
+                }
+            });
+        });
+
+        $('#semPai').on('change', function () {
+            var inputPai = $('#namePai').closest('.form-input');
+            var errorSpan = inputPai.find('.error');
+
+            if ($(this).is(':checked')) {
+                $('#namePai').prop('readonly', true).val('').attr('disabled', true);
+                $('#namePai').removeAttr('required');
+
+                inputPai.removeClass('error');
+                inputPai.css('opacity', '0.5');
+                errorSpan.css('display', 'none');
+            } else {
+                $('#namePai').prop('readonly', false).attr('disabled', false);
+                $('#namePai').attr('required', 'required');
+                inputPai.css('opacity', '1');
+            }
+        });
+
+        $('select[required]').on('blur change', function () {
+            var formInput = $(this).closest('.form-input');
+            var errorSpan = formInput.find('.error');
+
+            if (!$(this).val()) {
+                formInput.addClass('error');
+                errorSpan.show();
+            } else {
+                formInput.removeClass('error');
+                errorSpan.hide();
+            }
+        });
+
+        $('.btn-voltar-1').on('click', function (e) {
+            e.preventDefault();
+
+            $('.step-2').removeClass('form-ativo').removeClass('slide-in-right').addClass('d-none');
+            $('.step-1').removeClass('d-none').addClass('form-ativo').addClass('slide-in-right');
+        });
+
+        $('.btn-voltar-2').on('click', function (e) {
+            e.preventDefault();
+
+            $('.step-3').removeClass('form-ativo').removeClass('slide-in-right').addClass('d-none');
+            $('.step-2').removeClass('d-none').addClass('form-ativo').addClass('slide-in-right');
+        });
+
+        $('.step-1').on('submit', function(e){
+            e.preventDefault();
+            $(this).removeClass('form-ativo').removeClass('slide-in-right').addClass('d-none');
+            $('.step-2').removeClass('d-none').addClass('form-ativo').addClass('slide-in-right');
+        });
+
+        $('.step-2').on('submit', function(e){
+            e.preventDefault();
+            $(this).removeClass('form-ativo').removeClass('slide-in-right').addClass('d-none');
+
+            if($('#nacionalidade').val() === 'Brasileiro(a)' || $('#nacionalidade').val() === 'Não informado'){
+                $('.step-3').removeClass('d-none').addClass('form-ativo').addClass('slide-in-right');
+
+                function rebuildCustomSelect(selectId) {
+                    var $select = $('#' + selectId);
+                    var name = $select.attr('id');
+
+                    $select.next('.styledSelect').remove();
+                    $select.next('ul.options').remove();
+
+                    $select.after('<div class="styledSelect ' + name + '"><span></span></div>');
+                    var $styledSelect = $select.next('.styledSelect');
+                    $styledSelect.text($select.children('option').eq(0).text());
+
+                    var $list = $('<ul />', {
+                        'class': 'options'
+                    }).insertAfter($styledSelect);
+
+                    var $searchInput = $('<li class="search-wrapper"><input type="text" class="search-input" placeholder="Procurar..."></li>');
+                    $list.append($searchInput);
+
+                    $select.children('option').each(function () {
+                        $('<li />', {
+                            text: $(this).text(),
+                            rel: $(this).val()
+                        }).appendTo($list);
+                    });
+
+                    $styledSelect.off('click').on('click', function (e) {
+                        e.stopPropagation();
+                        $('.select.active').not($select.closest('.select')).removeClass('active').find('ul.options').hide();
+                        $select.closest('.select').toggleClass('active');
+                        $list.toggle();
+                    });
+
+                    $list.on('click', 'li:not(.search-wrap)', function (e) {
+                        e.stopPropagation();
+                        $styledSelect.text($(this).text()).removeClass('active');
+                        $select.val($(this).attr('rel'));
+                        $list.hide();
+                        $select.closest('.select').addClass('prench');
+                        $select.trigger('change');
+                    });
+
+                    $list.find('.search-input').on('click', function(e) {
+                        e.stopPropagation();
+                    });
+
+                    $list.find('.search-input').on('input', function () {
+                        var search = $(this).val().toLowerCase();
+                        $list.find('li').not('.search-wrapper').each(function () {
+                            $(this).toggle($(this).text().toLowerCase().includes(search));
+                        });
+                    });
+                }
+
+                $(document).on('click', function (e) {
+                    if (!$(e.target).closest('.select').length) {
+                        $('.select.active').removeClass('active').find('ul.options').hide();
+                    }
+                });
+
+                $('.ufNasc .options li').click(function(){
+                    var selectedValue = $(this).attr('rel');
+
+                    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedValue}/municipios`)
+                    .then(res => res.json())
+                    .then(data => {
+                        let options = '<option value=""></option>';
+                        data.forEach(m => {
+                            options += `<option value="${m.nome}">${m.nome}</option>`;
+                        });
+                        $('#cidade-nascimento').html(options);
+                        rebuildCustomSelect('cidade-nascimento');
+                    })
+                    .catch(() => {
+                        $('#cidade-nascimento').html('<option>Erro ao carregar municípios</option>');
+                    });
+                });
+            }else{
+                const cpfDataString = localStorage.getItem('cpfData');
+                const cpfData = JSON.parse(cpfDataString);
+
+                cpfData.sexo = $('#sexo').val();
+                cpfData.raca = $('#raca').val();
+                cpfData.estado_civil = $('#estado_civil').val();
+                cpfData.nacionalidade = $('#nacionalidade').val();
+                cpfData.ufNasc = 'Não informado';
+                cpfData.cidNasc = 'Não informado';
+
+                localStorage.setItem('cpfData', JSON.stringify(cpfData));
+
+                window.location.href = './endereco.html';
+            }
+        });
+        $('.step-3').on('submit', function(e){
+            e.preventDefault();
+
+            const cpfDataString = localStorage.getItem('cpfData');
+            const cpfData = JSON.parse(cpfDataString);
+
+            cpfData.sexo = $('#sexo').val();
+            cpfData.raca = $('#raca').val();
+            cpfData.estado_civil = $('#estado_civil').val();
+            cpfData.nacionalidade = $('#nacionalidade').val();
+            cpfData.ufNasc = $('#uf-nascimento').val();
+            cpfData.cidNasc = $('#cidade-nascimento').val();
+
+            localStorage.setItem('cpfData', JSON.stringify(cpfData));
+
+            window.location.href = './endereco.html';
+        });
+    });
+</script>
+
+
+
+</body></html>
